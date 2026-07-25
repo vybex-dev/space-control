@@ -11,10 +11,10 @@ export default function App() {
 
   return (
     <SimulationProvider>
+      <AppShell />
       {!booted && !prefersReducedMotion && (
         <BootSequence onDone={() => setBooted(true)} />
       )}
-      {(booted || prefersReducedMotion) && <AppShell />}
     </SimulationProvider>
   );
 }

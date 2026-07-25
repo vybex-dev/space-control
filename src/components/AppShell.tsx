@@ -74,6 +74,7 @@ function Sidebar({
           {NAV_ITEMS.map((item) => (
             <button
               key={item.key}
+              type="button"
               onClick={() => onNavigate(item.key)}
               aria-label={item.label}
               aria-current={active === item.key ? "page" : undefined}
@@ -81,7 +82,7 @@ function Sidebar({
               style={{
                 background:
                   active === item.key ? "rgba(34,211,238,0.10)" : "transparent",
-                color: active === item.key ? "#22d3ee" : "#8b93a7",
+                color: active === item.key ? "#22d3ee" : "#cbd5e1",
                 boxShadow:
                   active === item.key ? "inset 2px 0 0 0 #22d3ee" : "none",
                 outlineColor: "#22d3ee",
@@ -96,7 +97,7 @@ function Sidebar({
         </nav>
         <div
           className="px-4 py-3 border-t text-[10px] font-mono text-left"
-          style={{ borderColor: "#1a2138", color: "#7b8499" }}
+          style={{ borderColor: "#1a2138", color: "#94a3b8" }}
         >
           AEGIS MISSION CONTROL
           <br />
@@ -117,12 +118,13 @@ function Sidebar({
         {NAV_ITEMS.slice(0, 4).map((item) => (
           <button
             key={item.key}
+            type="button"
             onClick={() => onNavigate(item.key)}
             aria-label={item.label}
             aria-current={active === item.key ? "page" : undefined}
             className="flex flex-col items-center justify-center gap-0.5 flex-1 h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset cursor-pointer"
             style={{
-              color: active === item.key ? "#22d3ee" : "#8b93a7",
+              color: active === item.key ? "#22d3ee" : "#cbd5e1",
               outlineColor: "#22d3ee",
             }}
           >
@@ -133,12 +135,13 @@ function Sidebar({
           </button>
         ))}
         <button
+          type="button"
           onClick={() => onNavigate("settings")}
           aria-label="Settings"
           aria-current={active === "settings" ? "page" : undefined}
           className="flex flex-col items-center justify-center gap-0.5 flex-1 h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset cursor-pointer"
           style={{
-            color: active === "settings" ? "#22d3ee" : "#8b93a7",
+            color: active === "settings" ? "#22d3ee" : "#cbd5e1",
             outlineColor: "#22d3ee",
           }}
         >
@@ -180,10 +183,11 @@ function Sidebar({
                 </span>
               </div>
               <button
+                type="button"
                 onClick={onCloseMobile}
                 aria-label="Close navigation menu"
                 className="focus-visible:outline-none focus-visible:ring-2 rounded-sm cursor-pointer"
-                style={{ color: "#8b93a7", outlineColor: "#22d3ee" }}
+                style={{ color: "#cbd5e1", outlineColor: "#22d3ee" }}
               >
                 <IconX />
               </button>
@@ -195,6 +199,7 @@ function Sidebar({
               {NAV_ITEMS.map((item) => (
                 <button
                   key={item.key}
+                  type="button"
                   onClick={() => {
                     onNavigate(item.key);
                     onCloseMobile();
@@ -207,7 +212,7 @@ function Sidebar({
                       active === item.key
                         ? "rgba(34,211,238,0.10)"
                         : "transparent",
-                    color: active === item.key ? "#22d3ee" : "#8b93a7",
+                    color: active === item.key ? "#22d3ee" : "#cbd5e1",
                     outlineColor: "#22d3ee",
                   }}
                 >
@@ -247,21 +252,22 @@ function TopBar({
     >
       <div className="flex items-center gap-3 min-w-0">
         <button
+          type="button"
           onClick={onOpenMobileMenu}
           aria-label="Open navigation menu"
           className="md:hidden focus-visible:outline-none focus-visible:ring-2 rounded-sm cursor-pointer"
-          style={{ color: "#8b93a7", outlineColor: "#22d3ee" }}
+          style={{ color: "#cbd5e1", outlineColor: "#22d3ee" }}
         >
           <IconMenu />
         </button>
         <div className="min-w-0 text-left">
           <div
             className="text-[10px] font-mono tracking-[0.2em]"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             MISSION CONTROL /
           </div>
-          <div
+          <h1
             className="text-sm md:text-base font-semibold truncate"
             style={{
               color: "#e5e7eb",
@@ -269,7 +275,7 @@ function TopBar({
             }}
           >
             {activeLabel}
-          </div>
+          </h1>
         </div>
       </div>
 
@@ -299,7 +305,7 @@ function TopBar({
 
         {/* Active missions */}
         <div className="hidden sm:flex flex-col items-end leading-tight">
-          <span className="text-[10px] font-mono" style={{ color: "#7b8499" }}>
+          <span className="text-[10px] font-mono" style={{ color: "#94a3b8" }}>
             ACTIVE
           </span>
           <span
@@ -312,7 +318,7 @@ function TopBar({
 
         {/* Alert badge */}
         <div className="relative flex flex-col items-end leading-tight">
-          <span className="text-[10px] font-mono" style={{ color: "#7b8499" }}>
+          <span className="text-[10px] font-mono" style={{ color: "#94a3b8" }}>
             ALERTS
           </span>
           <span
@@ -328,7 +334,7 @@ function TopBar({
           className="flex flex-col items-end leading-tight border-l pl-3 md:pl-5"
           style={{ borderColor: "#1a2138" }}
         >
-          <span className="text-[10px] font-mono" style={{ color: "#7b8499" }}>
+          <span className="text-[10px] font-mono" style={{ color: "#94a3b8" }}>
             UTC
           </span>
           <span
@@ -389,7 +395,7 @@ function StatusStrip() {
       style={{
         background: "#080b13",
         borderColor: "#1a2138",
-        color: "#7b8499",
+        color: "#94a3b8",
       }}
     >
       <span>AEGIS-CTRL · CALLSIGN "SENTINEL-1"</span>

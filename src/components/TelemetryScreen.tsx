@@ -161,6 +161,7 @@ function OrbitalVisualization({
 
       <div className="absolute top-3 right-3 z-20 flex flex-col gap-1">
         <button
+          type="button"
           onClick={() =>
             setZoom((z) => Math.min(2.2, Number((z + 0.2).toFixed(2))))
           }
@@ -168,7 +169,7 @@ function OrbitalVisualization({
           style={{
             borderColor: "#1a2138",
             background: "#0d1220",
-            color: "#8b93a7",
+            color: "#cbd5e1",
             outlineColor: "#22d3ee",
           }}
           aria-label="Zoom in"
@@ -176,6 +177,7 @@ function OrbitalVisualization({
           +
         </button>
         <button
+          type="button"
           onClick={() =>
             setZoom((z) => Math.max(0.5, Number((z - 0.2).toFixed(2))))
           }
@@ -183,7 +185,7 @@ function OrbitalVisualization({
           style={{
             borderColor: "#1a2138",
             background: "#0d1220",
-            color: "#8b93a7",
+            color: "#cbd5e1",
             outlineColor: "#22d3ee",
           }}
           aria-label="Zoom out"
@@ -194,7 +196,7 @@ function OrbitalVisualization({
 
       <div
         className="absolute top-3 left-3 z-20 text-[10px] font-mono tracking-wider"
-        style={{ color: "#7b8499" }}
+        style={{ color: "#94a3b8" }}
       >
         ORBITAL VIEW
       </div>
@@ -391,7 +393,7 @@ function OrbitalVisualization({
 
       <div
         className="absolute bottom-3 left-3 z-20 text-[10px] font-mono"
-        style={{ color: "#7b8499" }}
+        style={{ color: "#94a3b8" }}
       >
         {spacecraft.length} TRACKED · ZOOM {zoom.toFixed(1)}×
       </div>
@@ -489,7 +491,7 @@ function TelemetryMetricCard({
         <div className="min-w-0 flex-1">
           <div
             className="text-[10px] font-mono tracking-wide mb-1 truncate"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             {label.toUpperCase()}
           </div>
@@ -499,7 +501,7 @@ function TelemetryMetricCard({
           >
             {value}
             {unit && (
-              <span className="text-xs ml-1" style={{ color: "#7b8499" }}>
+              <span className="text-xs ml-1" style={{ color: "#94a3b8" }}>
                 {unit}
               </span>
             )}
@@ -526,7 +528,7 @@ function SubsystemBar({ subsystem }: { subsystem: Subsystem }) {
     <div className="flex items-center gap-3">
       <span
         className="text-[11px] font-mono w-20 shrink-0 text-left"
-        style={{ color: "#8b93a7" }}
+        style={{ color: "#cbd5e1" }}
       >
         {subsystem.label.toUpperCase()}
       </span>
@@ -608,7 +610,7 @@ function TelemetryDataPanel({ craft }: { craft: Spacecraft }) {
         <div className="mt-3 pt-3 border-t" style={{ borderColor: "#1a2138" }}>
           <div
             className="flex items-center justify-between text-[11px] font-mono"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             <span>POSITION</span>
             <span style={{ color: "#e5e7eb" }}>
@@ -689,7 +691,7 @@ export function TelemetryScreen() {
         >
           <span
             className="text-[10px] font-mono tracking-widest shrink-0"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             TRACK
           </span>

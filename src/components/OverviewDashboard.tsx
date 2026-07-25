@@ -101,7 +101,7 @@ function KpiCard({
         <h3
           className="text-xs font-semibold tracking-wide min-w-0 truncate"
           style={{
-            color: "#8b93a7",
+            color: "#94a3b8",
             fontFamily: "'Space Grotesk', 'Inter', sans-serif",
           }}
         >
@@ -167,7 +167,7 @@ export function KpiRow() {
         value={activeCount}
         valueColor="#22d3ee"
         statusLabel={`${missions.length} TOTAL`}
-        statusColor="#7b8499"
+        statusColor="#94a3b8"
         flashKey={activeCount}
       />
       <KpiCard
@@ -290,7 +290,7 @@ function MissionProgressDonut({
           </span>
           <span
             className="text-[10px] font-mono tracking-wider"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             OVERALL
           </span>
@@ -311,7 +311,7 @@ function MissionProgressDonut({
                   boxShadow: `0 0 6px ${slice.color}`,
                 }}
               />
-              <span className="text-xs font-mono" style={{ color: "#8b93a7" }}>
+              <span className="text-xs font-mono" style={{ color: "#cbd5e1" }}>
                 {slice.label}
               </span>
             </div>
@@ -411,6 +411,7 @@ function MissionListPanel() {
           return (
             <button
               key={m.id}
+              type="button"
               onClick={() => selectMission(m.id)}
               aria-pressed={isSelected}
               aria-label={`Select mission ${m.name}`}
@@ -456,14 +457,14 @@ function MissionListPanel() {
                   </div>
                   <span
                     className="text-[11px] font-mono tabular-nums shrink-0"
-                    style={{ color: "#8b93a7" }}
+                    style={{ color: "#cbd5e1" }}
                   >
                     {m.progress}%
                   </span>
                 </div>
                 <div
                   className="text-[10px] font-mono mt-1.5"
-                  style={{ color: "#7b8499" }}
+                  style={{ color: "#94a3b8" }}
                 >
                   {m.phase}
                 </div>
@@ -509,7 +510,7 @@ function AlertRow({ alert, isNew }: { alert: Alert; isNew: boolean }) {
           </p>
           <span
             className="text-[10px] font-mono shrink-0 mt-0.5"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             {relativeTime(alert.timestamp, utcNow)}
           </span>
@@ -523,10 +524,10 @@ function AlertRow({ alert, isNew }: { alert: Alert; isNew: boolean }) {
           </span>
           {mission && (
             <>
-              <span style={{ color: "#7b8499" }}>·</span>
+              <span style={{ color: "#94a3b8" }}>·</span>
               <span
                 className="text-[10px] font-mono"
-                style={{ color: "#7b8499" }}
+                style={{ color: "#94a3b8" }}
               >
                 {mission.name}
               </span>
@@ -534,7 +535,7 @@ function AlertRow({ alert, isNew }: { alert: Alert; isNew: boolean }) {
           )}
           {alert.resolved && (
             <>
-              <span style={{ color: "#7b8499" }}>·</span>
+              <span style={{ color: "#94a3b8" }}>·</span>
               <span
                 className="text-[10px] font-mono"
                 style={{ color: "#4ade80" }}
@@ -573,7 +574,7 @@ function LiveAlertsFeedPanel() {
       <div className="flex flex-col max-h-[420px] overflow-y-auto -mr-1 pr-1">
         {sorted.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-10 text-center">
-            <span className="text-xs font-mono" style={{ color: "#7b8499" }}>
+            <span className="text-xs font-mono" style={{ color: "#94a3b8" }}>
               NO ALERTS RECORDED
             </span>
           </div>

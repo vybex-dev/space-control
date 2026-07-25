@@ -122,7 +122,7 @@ function LinkCard({
         <span
           className="text-xs font-semibold tracking-wide"
           style={{
-            color: "#8b93a7",
+            color: "#cbd5e1",
             fontFamily: "'Space Grotesk', 'Inter', sans-serif",
           }}
         >
@@ -157,7 +157,7 @@ function LinkCard({
         <div>
           <div
             className="text-[9px] font-mono mb-0.5"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             RATE
           </div>
@@ -166,7 +166,7 @@ function LinkCard({
             style={{ color: "#e5e7eb" }}
           >
             {dataRate.toFixed(1)}{" "}
-            <span className="text-[10px]" style={{ color: "#7b8499" }}>
+            <span className="text-[10px]" style={{ color: "#94a3b8" }}>
               Mbps
             </span>
           </div>
@@ -174,7 +174,7 @@ function LinkCard({
         <div>
           <div
             className="text-[9px] font-mono mb-0.5"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             LATENCY
           </div>
@@ -183,7 +183,7 @@ function LinkCard({
             style={{ color: "#e5e7eb" }}
           >
             {latency}{" "}
-            <span className="text-[10px]" style={{ color: "#7b8499" }}>
+            <span className="text-[10px]" style={{ color: "#94a3b8" }}>
               ms
             </span>
           </div>
@@ -191,7 +191,7 @@ function LinkCard({
         <div>
           <div
             className="text-[9px] font-mono mb-0.5"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             SIGNAL
           </div>
@@ -466,7 +466,7 @@ function AlertLogRow({ alert }: { alert: Alert }) {
           </p>
           <span
             className="text-[10px] font-mono shrink-0 mt-0.5"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             {relativeTime(alert.timestamp, utcNow)}
           </span>
@@ -480,10 +480,10 @@ function AlertLogRow({ alert }: { alert: Alert }) {
           </span>
           {alert.subsystem && (
             <>
-              <span style={{ color: "#7b8499" }}>·</span>
+              <span style={{ color: "#94a3b8" }}>·</span>
               <span
                 className="text-[9px] font-mono tracking-wide px-1.5 py-0.5 rounded-sm"
-                style={{ color: "#8b93a7", background: "#1a2138" }}
+                style={{ color: "#cbd5e1", background: "#1a2138" }}
               >
                 {SUBSYSTEM_LABELS[alert.subsystem]}
               </span>
@@ -491,10 +491,10 @@ function AlertLogRow({ alert }: { alert: Alert }) {
           )}
           {mission && (
             <>
-              <span style={{ color: "#7b8499" }}>·</span>
+              <span style={{ color: "#94a3b8" }}>·</span>
               <span
                 className="text-[10px] font-mono"
-                style={{ color: "#7b8499" }}
+                style={{ color: "#94a3b8" }}
               >
                 {mission.name}
               </span>
@@ -502,7 +502,7 @@ function AlertLogRow({ alert }: { alert: Alert }) {
           )}
           {alert.resolved && (
             <>
-              <span style={{ color: "#7b8499" }}>·</span>
+              <span style={{ color: "#94a3b8" }}>·</span>
               <span
                 className="text-[10px] font-mono"
                 style={{ color: "#4ade80" }}
@@ -515,17 +515,18 @@ function AlertLogRow({ alert }: { alert: Alert }) {
           {alert.acknowledged ? (
             <span
               className="text-[10px] font-mono tracking-wide"
-              style={{ color: "#7b8499" }}
+              style={{ color: "#94a3b8" }}
             >
               ACKNOWLEDGED
             </span>
           ) : (
             <button
+              type="button"
               onClick={() => acknowledgeAlert(alert.id)}
               aria-label={`Acknowledge alert: ${alert.message}`}
               className="text-[10px] font-mono tracking-wide px-2 py-0.5 rounded-sm border transition-colors hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 cursor-pointer"
               style={{
-                color: "#8b93a7",
+                color: "#cbd5e1",
                 borderColor: "#1a2138",
                 outlineColor: "#22d3ee",
               }}
@@ -574,18 +575,19 @@ function LiveAlertLogPanel({ missionId }: { missionId: string | null }) {
           return (
             <button
               key={f.key}
+              type="button"
               onClick={() => setFilter(f.key)}
               aria-pressed={isActive}
               className="text-[10px] font-mono tracking-wide px-2.5 py-1 rounded-sm border transition-colors focus-visible:outline-none focus-visible:ring-2 cursor-pointer"
               style={{
-                color: isActive ? "#22d3ee" : "#8b93a7",
+                color: isActive ? "#22d3ee" : "#cbd5e1",
                 borderColor: isActive ? "rgba(34,211,238,0.5)" : "#1a2138",
                 background: isActive ? "rgba(34,211,238,0.08)" : "transparent",
                 outlineColor: "#22d3ee",
               }}
             >
               {f.label.toUpperCase()}{" "}
-              <span style={{ color: "#7b8499" }}>({count})</span>
+              <span style={{ color: "#94a3b8" }}>({count})</span>
             </button>
           );
         })}
@@ -593,7 +595,7 @@ function LiveAlertLogPanel({ missionId }: { missionId: string | null }) {
       <div className="flex flex-col max-h-[360px] overflow-y-auto -mr-1 pr-1">
         {sorted.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-10 text-center">
-            <span className="text-xs font-mono" style={{ color: "#7b8499" }}>
+            <span className="text-xs font-mono" style={{ color: "#94a3b8" }}>
               NO ALERTS IN THIS FILTER
             </span>
           </div>
@@ -644,7 +646,7 @@ function CommsTimelinePanel({ craft }: { craft: Spacecraft }) {
       eyebrow={`${craft.name} · SIGNAL TREND`}
     >
       <div className="flex items-center justify-between mb-2">
-        <span className="text-[11px] font-mono" style={{ color: "#7b8499" }}>
+        <span className="text-[11px] font-mono" style={{ color: "#94a3b8" }}>
           LAST {trend.length} TICKS
         </span>
         {degrading ? (
@@ -699,7 +701,7 @@ function CommsTimelinePanel({ craft }: { craft: Spacecraft }) {
       </svg>
       <div
         className="flex items-center justify-between mt-2 text-[10px] font-mono"
-        style={{ color: "#7b8499" }}
+        style={{ color: "#94a3b8" }}
       >
         <span>{min} dBm</span>
         <span style={{ color }}>{latest} dBm CURRENT</span>

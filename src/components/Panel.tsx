@@ -35,7 +35,7 @@ export function Panel({
           {title}
         </h3>
         {eyebrow && (
-          <span className="text-[10px] font-mono" style={{ color: "#7b8499" }}>
+          <span className="text-[10px] font-mono" style={{ color: "#94a3b8" }}>
             {eyebrow}
           </span>
         )}
@@ -58,7 +58,7 @@ export function NoSpacecraftDataPanel({ mission }: { mission: { name: string; st
       <div className="flex flex-col items-center justify-center py-12 text-center gap-3">
         <div
           className="w-12 h-12 rounded-full border flex items-center justify-center"
-          style={{ borderColor: "rgba(139,147,167,0.35)", color: "#7b8499" }}
+          style={{ borderColor: "rgba(148,163,184,0.35)", color: "#94a3b8" }}
         >
           <svg
             viewBox="0 0 24 24"
@@ -67,6 +67,7 @@ export function NoSpacecraftDataPanel({ mission }: { mission: { name: string; st
             strokeWidth="1.75"
             width="20"
             height="20"
+            aria-hidden="true"
           >
             <path d="M4 18h2v-4H4v4Zm7 0h2V9h-2v9Zm7 0h2V4h-2v14Z" />
           </svg>
@@ -83,7 +84,7 @@ export function NoSpacecraftDataPanel({ mission }: { mission: { name: string; st
           </p>
           <p
             className="text-xs font-mono mt-1.5 max-w-xs"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             {mission.name} has no active craft reporting live data
             {mission.status === "completed" ? " — mission has concluded." : "."}
@@ -92,9 +93,9 @@ export function NoSpacecraftDataPanel({ mission }: { mission: { name: string; st
         <span
           className="text-[10px] font-mono tracking-wide px-2.5 py-1 rounded-sm border"
           style={{
-            color: STATUS_COLORS[mission.status] || "#8b93a7",
-            borderColor: `${STATUS_COLORS[mission.status] || "#8b93a7"}40`,
-            background: `${STATUS_COLORS[mission.status] || "#8b93a7"}1a`,
+            color: STATUS_COLORS[mission.status] || "#cbd5e1",
+            borderColor: `${STATUS_COLORS[mission.status] || "#cbd5e1"}40`,
+            background: `${STATUS_COLORS[mission.status] || "#cbd5e1"}1a`,
           }}
         >
           STATUS: {mission.status.toUpperCase()}

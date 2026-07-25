@@ -70,6 +70,7 @@ export function BootSequence({ onDone }: { onDone: () => void }) {
             strokeWidth="1.4"
             width="40"
             height="40"
+            aria-hidden="true"
           >
             <path
               d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z"
@@ -93,7 +94,7 @@ export function BootSequence({ onDone }: { onDone: () => void }) {
         </span>
         <span
           className="text-[10px] font-mono tracking-[0.25em]"
-          style={{ color: "#7b8499" }}
+          style={{ color: "#94a3b8" }}
         >
           MISSION CONTROL SYSTEM
         </span>
@@ -108,7 +109,7 @@ export function BootSequence({ onDone }: { onDone: () => void }) {
               color:
                 i === lineIdx - 1 && i === BOOT_LINES.length - 1
                   ? "#4ade80"
-                  : "#8b93a7",
+                  : "#cbd5e1",
               animation: "aegis-boot-line-in 220ms ease-out",
             }}
           >
@@ -142,7 +143,7 @@ export function BootSequence({ onDone }: { onDone: () => void }) {
         <span
           className="mt-8 text-[10px] font-mono tracking-wide"
           style={{
-            color: "#7b8499",
+            color: "#94a3b8",
             animation: "aegis-boot-line-in 300ms ease-out",
           }}
         >

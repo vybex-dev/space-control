@@ -67,7 +67,7 @@ function deriveTimelineForMission(mission: Mission): TimelinePhase[] {
 const PHASE_STATUS_COLOR: Record<PhaseStatus, string> = {
   completed: "#4ade80",
   current: "#22d3ee",
-  upcoming: "#7b8499",
+  upcoming: "#94a3b8",
 };
 
 function TimelineNode({
@@ -121,13 +121,13 @@ function TimelineNode({
           </div>
           <p
             className="text-[11px] leading-snug mb-1.5"
-            style={{ color: "#8b93a7" }}
+            style={{ color: "#cbd5e1" }}
           >
             {detail.desc}
           </p>
           <div
             className="flex items-center justify-between text-[10px] font-mono"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             <span>{phase.timeOffset}</span>
             <span>{detail.owner}</span>
@@ -164,7 +164,7 @@ function TimelineNode({
       <span
         className="mt-2.5 text-[11px] font-semibold text-center leading-tight px-1"
         style={{
-          color: phase.status === "upcoming" ? "#8b93a7" : "#e5e7eb",
+          color: phase.status === "upcoming" ? "#cbd5e1" : "#e5e7eb",
           fontFamily: "'Space Grotesk', 'Inter', sans-serif",
         }}
       >
@@ -172,7 +172,7 @@ function TimelineNode({
       </span>
       <span
         className="mt-0.5 text-[10px] font-mono"
-        style={{ color: "#7b8499" }}
+        style={{ color: "#94a3b8" }}
       >
         {phase.timeOffset}
       </span>
@@ -256,7 +256,7 @@ function clamp(v: number, min: number, max: number): number {
 }
 
 function trendArrow(delta: number): { symbol: string; color: string } {
-  if (Math.abs(delta) < 0.05) return { symbol: "→", color: "#8b93a7" };
+  if (Math.abs(delta) < 0.05) return { symbol: "→", color: "#cbd5e1" };
   return delta > 0
     ? { symbol: "▲", color: "#4ade80" }
     : { symbol: "▼", color: "#f87171" };
@@ -273,7 +273,7 @@ function OperationalStatsRow({ spacecraft }: { spacecraft: Spacecraft[] }) {
         className="rounded-sm border p-6 text-center"
         style={{ background: "#0d1220", borderColor: "#1a2138" }}
       >
-        <span className="text-xs font-mono" style={{ color: "#7b8499" }}>
+        <span className="text-xs font-mono" style={{ color: "#94a3b8" }}>
           NO FLEET TELEMETRY AVAILABLE
         </span>
       </div>
@@ -329,7 +329,7 @@ function OperationalStatsRow({ spacecraft }: { spacecraft: Spacecraft[] }) {
         <div className="min-w-0 text-left">
           <div
             className="text-[10px] font-mono tracking-wide"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             FUEL LEVEL
           </div>
@@ -348,7 +348,7 @@ function OperationalStatsRow({ spacecraft }: { spacecraft: Spacecraft[] }) {
       >
         <div
           className="text-[10px] font-mono tracking-wide"
-          style={{ color: "#7b8499" }}
+          style={{ color: "#94a3b8" }}
         >
           POWER GENERATION
         </div>
@@ -361,7 +361,7 @@ function OperationalStatsRow({ spacecraft }: { spacecraft: Spacecraft[] }) {
           </span>
           <span
             className="text-xs font-mono mb-0.5"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             kW
           </span>
@@ -380,7 +380,7 @@ function OperationalStatsRow({ spacecraft }: { spacecraft: Spacecraft[] }) {
       >
         <div
           className="text-[10px] font-mono tracking-wide"
-          style={{ color: "#7b8499" }}
+          style={{ color: "#94a3b8" }}
         >
           DATA USAGE
         </div>
@@ -393,7 +393,7 @@ function OperationalStatsRow({ spacecraft }: { spacecraft: Spacecraft[] }) {
           </span>
           <span
             className="text-xs font-mono mb-0.5"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             TB
           </span>
@@ -412,7 +412,7 @@ function OperationalStatsRow({ spacecraft }: { spacecraft: Spacecraft[] }) {
       >
         <div
           className="text-[10px] font-mono tracking-wide"
-          style={{ color: "#7b8499" }}
+          style={{ color: "#94a3b8" }}
         >
           EVENTS (24H)
         </div>
@@ -425,14 +425,14 @@ function OperationalStatsRow({ spacecraft }: { spacecraft: Spacecraft[] }) {
           </span>
           <span
             className="text-xs font-mono mb-0.5"
-            style={{ color: "#7b8499" }}
+            style={{ color: "#94a3b8" }}
           >
             LOGGED
           </span>
         </div>
         <span
           className="text-[11px] font-mono mt-1"
-          style={{ color: "#8b93a7" }}
+          style={{ color: "#cbd5e1" }}
         >
           ACROSS FLEET
         </span>
@@ -471,7 +471,7 @@ function MissionProgressComparisonPanel({
             <div key={m.id} className="flex items-center gap-2 sm:gap-3">
               <span
                 className="text-[10px] sm:text-[11px] font-mono w-16 sm:w-[104px] shrink-0 truncate text-left"
-                style={{ color: isSelected ? "#22d3ee" : "#8b93a7" }}
+                style={{ color: isSelected ? "#22d3ee" : "#cbd5e1" }}
                 title={m.name}
               >
                 {m.name}
@@ -679,7 +679,7 @@ function ResourceEfficiencyChartPanel({
       </svg>
       <div
         className="flex items-center justify-between mt-2 text-[10px] font-mono"
-        style={{ color: "#7b8499" }}
+        style={{ color: "#94a3b8" }}
       >
         <span>MISSION HISTORY — {power.length} TICKS</span>
         <span>LIVE</span>
@@ -741,7 +741,7 @@ function EventsBreakdownChartPanel({ alerts }: { alerts: Alert[] }) {
             </div>
             <span
               className="text-[10px] font-mono tracking-wide"
-              style={{ color: "#7b8499" }}
+              style={{ color: "#94a3b8" }}
             >
               {b.label}
             </span>

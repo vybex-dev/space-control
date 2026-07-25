@@ -9,6 +9,7 @@ export function IconGrid() {
       strokeWidth="1.75"
       width="20"
       height="20"
+      aria-hidden="true"
     >
       <rect x="3" y="3" width="7" height="7" rx="1" />
       <rect x="14" y="3" width="7" height="7" rx="1" />
@@ -27,6 +28,7 @@ export function IconSignal() {
       strokeWidth="1.75"
       width="20"
       height="20"
+      aria-hidden="true"
     >
       <path d="M4 18h2v-4H4v4Zm7 0h2V9h-2v9Zm7 0h2V4h-2v14Z" />
     </svg>
@@ -42,6 +44,7 @@ export function IconPulse() {
       strokeWidth="1.75"
       width="20"
       height="20"
+      aria-hidden="true"
     >
       <path
         d="M3 12h4l2 7 4-14 2 7h6"
@@ -61,6 +64,7 @@ export function IconClock() {
       strokeWidth="1.75"
       width="20"
       height="20"
+      aria-hidden="true"
     >
       <circle cx="12" cy="12" r="9" />
       <path d="M12 7v5l3 3" strokeLinecap="round" strokeLinejoin="round" />
@@ -77,6 +81,7 @@ export function IconGear() {
       strokeWidth="1.75"
       width="20"
       height="20"
+      aria-hidden="true"
     >
       <circle cx="12" cy="12" r="3" />
       <path
@@ -90,17 +95,26 @@ export function IconGear() {
 
 export function IconAegis() {
   return (
-    <span
-      style={{
-        fontSize: "1.2rem",
-        display: "inline-flex",
-        alignItems: "center",
-      }}
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      width="24"
+      height="24"
+      aria-label="AEGIS Logo"
       role="img"
-      aria-label="satellite logo"
     >
-      🪐
-    </span>
+      <path
+        d="M12 2L3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9 12l2 2 4-4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
 
@@ -113,6 +127,7 @@ export function IconMenu() {
       strokeWidth="1.75"
       width="22"
       height="22"
+      aria-hidden="true"
     >
       <path d="M3 6h18M3 12h18M3 18h18" strokeLinecap="round" />
     </svg>
@@ -128,6 +143,7 @@ export function IconX() {
       strokeWidth="1.75"
       width="20"
       height="20"
+      aria-hidden="true"
     >
       <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
     </svg>
